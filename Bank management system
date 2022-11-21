@@ -89,7 +89,7 @@ public class Bank
      int ch;
      do
      {
-         System.out.println("MAIN MENU \n 1.Display All\n 2.Deposit \n 3.Withdraw \n 4.Search \n 5.Exit");
+         System.out.println("MAIN MENU \n 1.Display All\n 2.Search \n 3.Deposit \n 4.Withdraw \n 5.Exit");
          System.out.println("Enter your choice");
          ch=sc1.nextInt();//switch value
          switch(ch)
@@ -100,18 +100,57 @@ public class Bank
                      A[i].Display();
                  }
                    break;
-            case 2:
-                 for(int i=0;i<A.length;i++)
-                 {
-                     A[i].Deposit();
-                 }
-                   break;
-            case 3:
-                 for(int i=0;i<A.length;i++)
-                 {
-                     A[i].Withdraw();
-                 }
-                   break;
+            case 2:System.out.println("Enter your account number to search");
+            String acn=sc1.next();
+            boolean found=false;
+            for(int i=0;i<A.length;i++)
+            {
+                found=A[i].Search(acn);
+                if(found)
+              {
+                  break;
+              }
+            }if(!found)
+            {
+                System.out.println("Search failed");
+            }
+               
+            case 3:  System.out.println("Enter account number");
+                acn=sc1.nextLine();
+                found=false;
+                for(int i=0;i<A.length;i++)
+                {
+                    found=A[i].Search(acn);
+                    if(found){
+                        A[i].Deposit();
+                        break;
+                    }
+                }
+                  if(!found)
+                  {
+                      System.out.println("ACCOUNT DOES NOT EXIST");
+                  }
+            
+                
+            case 4:System.out.println("Enter account number");
+                acn=sc1.next();
+                found=false;
+                for(int i=0;i<A.length;i++)
+                {
+                    found=A[i].Search(acn);
+                    if(found){
+                        A[i].Withdraw();
+                        break;
+                    }
+                }
+                  if(!found)
+                  {
+                      System.out.println("ACCOUNT DOES NOT EXIST");
+                  }
+                
+                
+                
+                
                 
          }
      }while(ch!=5);
