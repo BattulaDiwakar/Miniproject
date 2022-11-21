@@ -1,0 +1,84 @@
+//Let us rock and roll
+import java.util.Scanner;
+class Admin
+{
+private String acno;
+private String name;
+private long balance;
+Scanner sc1=new Scanner(System.in);
+//method to open an account
+void openAccount()
+{   System.out.println("**======WELCOME TO DIWA BANK======**");
+    System.out.println("Enter account number:");
+    acno=sc1.next();
+    System.out.println("Enter account holder name:");
+    name=sc1.next();
+    System.out.println("Enter your amount:");
+    balance=sc1.nextLong();
+
+}
+//method to display account details
+void Display()
+{   System.out.println("<=======HI!====="+name+"======>::::");
+  System.out.println(""+acno);
+  System.out.println(""+name);
+    System.out.println(""+balance);
+}
+//method to deposit money
+void Deposit()
+{
+    System.out.println("Enter the amount to deposit:");
+    long amount=sc1.nextLong();
+    balance=balance+amount;
+}
+//method to withdraw money
+void Withdraw()
+{
+    System.out.println("Enter the amount to be withdrawl:");
+    long amount1=sc1.nextLong();
+    if(amount1>=balance)
+    System.out.println("==============INSUFFICIENT FUNDS============");
+    else
+    {
+    balance=balance-amount1;
+    System.out.println("===============REMAINING AMOUNT=============:::is:::"+balance);
+    }
+}
+//method to search account number
+boolean Search(String acn)
+{
+    if(acno.equals(acn))
+    {
+        Display();
+        return true;
+    }
+    return (false);
+}
+
+
+
+
+}
+
+
+public class Bank
+{
+    public static void main(String args[])
+    {Scanner sc1=new Scanner(System.in);
+    //craete intial account
+    System.out.println("*======*HOW MANY CUSTOMERS DO YOU WANT*====*");
+    int n=sc1.nextInt();
+     Admin A[]=new Admin[n];
+     for(int i=0;i<A.length;i++)
+     {
+         A[i]=new Admin();//A[0],A[1],A[2],A[3],A[4]
+         A[i].openAccount();//ac no,name,balance
+         A[i].Display();
+         A[i].Deposit();
+         A[i].Withdraw();
+         
+         
+     }
+        
+    }
+}
