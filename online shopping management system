@@ -1,0 +1,287 @@
+import java.util.Scanner;
+
+public class Project 
+{
+          static int totalCost;
+          public static void main(String args[])
+          {
+              Scanner input=new Scanner(System.in);
+             
+              int choice;
+              System.out.println("enter number of users:");
+              int n=input.nextInt();
+              Admin A[]=new Admin[n];
+              for(int i=0;i<A.length;i++)
+              {
+               A[i]=new Admin();   
+              
+              A[i].openAccount();
+                  
+                  
+              }
+              do
+              {   System.out.println("SELECT YOUR NECESSITIES");
+                  System.out.println("*********MENU**********");
+                  System.out.println("1. KIDS WEAR");
+                  System.out.println("2. GENTS WEAR");
+                  System.out.println("3. LADIES WEAR");
+                  System.out.println("4. DELIVERY");
+                  System.out.println("5.EXIT");
+                  System.out.println("ENTER YOUR CHOICE");
+                  choice=input.nextInt();
+                  switch(choice)
+                  {
+                   
+                  
+                  //**************************[[ACCESSORIES]]**************************
+                  
+                  
+                    case 1:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Profile();
+                 }
+
+                      
+                        break;
+                 case 2:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Gents();
+                 }
+
+                      
+                        break;        
+                case 3:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Ladies();
+                 }
+
+                      
+                        break;  
+                case 4:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Delivery();
+                 }
+
+                      
+                        break;                
+                        
+                  }
+                 
+              }while(choice!=5);
+              
+          }
+}
+    class Admin
+    {
+       
+private String name;
+private long number;
+private long balance;
+Scanner sc1=new Scanner(System.in);
+//method to open an account
+void openAccount()
+{
+     System.out.println("*****************************MTIET SHOPPING**********************");
+            
+              
+   
+    System.out.println("Enter your name:");
+    name=sc1.next();
+      System.out.println("WELCOME *"+name+"* 💕💕💕TO MTIET SHOPPING , HOPE YOU ENJOY YOUR SHOPPING");
+    System.out.println("Enter your mobile number:");
+    number=sc1.nextLong();
+System.out.println("tell me your budget:");
+    balance=sc1.nextLong();
+}
+//method to display account details
+void Profile()
+{   System.out.println("💕❤️<**********HI!*******"+name+"************>::💕❤️::");
+System.out.println("------------------------------------------------");
+// System.out.println("============================================");
+  System.out.println("YOU ARE:                    "+name);
+System.out.println("============================================");
+  System.out.println("YOUR NUMBER                    "+number);
+System.out.println("============================================");
+System.out.println("WE HAVE A GREAT VARIETIES OF CLOTHES");
+                        {
+                    System.out.println("1.WESTREN WEAR ");
+                      System.out.println("2.TRADITIONAL");
+                      System.out.println("3. DAILY WEAR");
+                      System.out.println("SELECT YOUR CHOICE");
+                      System.out.println("                                    \n");
+                      int ch=sc1.nextInt();
+                      switch(ch)
+                      {
+                          case 1: System.out.println("enjoy great mtiet sales 20 percent on buy!!!!hurray.....");
+                              long discount=200;
+                             // System.out.println(""+discount);
+                              balance=balance-discount;
+                                  System.out.println("after discount on frocks pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                         case 2:
+                             System.out.println("enjoy great mtiet sales 30 percent on buy!!!!hurray.....");
+                              discount=300;
+                              balance=balance-discount;
+                                  System.out.println("after discount on pants pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                        case 3:System.out.println("enjoy great mtiet sales 10 percent on buy!!!!hurray....."); 
+                             discount=100;
+                             balance=balance-discount;
+                                  System.out.println("after discount on shirts pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                      }
+                        
+                      
+                        }
+                        
+
+}
+
+void Gents()
+{
+    System.out.println("<********💕**HI!*******"+name+"************>::::");
+System.out.println("------------------------------------------------");
+// System.out.println("============================================");
+  System.out.println("YOU ARE:                    "+name);
+System.out.println("============================================");
+  System.out.println("YOUR NUMBER                    "+number);
+System.out.println("============================================");
+System.out.println("WE HAVE A GREAT VARIETIES OF CLOTHES");
+                        {
+                    System.out.println("1. STYLISH WEAR ");
+                      System.out.println("2. TRADITIONAL");
+                      System.out.println("3. VESTS");
+                      System.out.println("SELECT YOUR CHOICE"); 
+                       int ch=sc1.nextInt();
+                      switch(ch)
+                      {
+                          case 1: System.out.println("😂enjoy great mtiet sales 20 percent on buy!!!!hurray.....");
+                             long discount=330;
+                             balance=balance-discount;
+                                  System.out.println("after discount on shirts for men pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                         case 2:System.out.println("😊enjoy great mtiet sales 30 percent on buy!!!!hurray....."); 
+                              discount=100;
+                              balance=balance-discount;
+                                  System.out.println("after discount on men pants pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                        case 3:System.out.println("😍👍😁enjoy great mtiet sales 10 percent on buy!!!!hurray....."); 
+                             discount=400;
+                             balance=balance-discount;
+                                  System.out.println("after discount on shorts and vest pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                      }
+                        
+                        
+                      
+                        }
+}
+void Ladies()
+{  System.out.println("HI!💕"+name+"*******");
+System.out.println("------------------------------------------------");
+// System.out.println("============================================");
+  System.out.println("YOU ARE:                    "+name);
+System.out.println("============================================");
+  System.out.println("YOUR NUMBER                    "+number);
+System.out.println("============================================");
+System.out.println("WE HAVE A GREAT VARIETIES OF CLOTHES");
+                        {
+                    System.out.println("1. FANCY WEAR ");
+                      System.out.println("2. TRADITIONAL ");
+                      System.out.println("3. PUNJABI OR LEHANGA OR GAGRA OR CHUDIDHAR ");
+                      System.out.println("SELECT YOUR CHOICE"); 
+                       int ch=sc1.nextInt();
+                      switch(ch)
+                      {
+                          case 1: System.out.println("😂enjoy great mtiet sales 20 percent on buy!!!!hurray.....");
+                             long discount=330;
+                             balance=balance-discount;
+                                  System.out.println("after discount on shirts for men pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  
+                                  break;
+                         case 2:System.out.println("👌enjoy great mtiet sales 30 percent on buy!!!!hurray....."); 
+                              discount=100;
+                              balance=balance-discount;
+                                  System.out.println("after discount on men pants pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                        case 3:System.out.println("🤣🙌enjoy great mtiet sales 10 percent on buy!!!!hurray....."); 
+                             discount=400;
+                             balance=balance-discount;
+                                  System.out.println("after discount on shorts and vest pay:::"+balance);
+                                   System.out.println("remaining  amount....wanna buy more?:::"+discount);
+                                  break;
+                      }
+                        
+                        
+                      
+                        }
+}
+ void Delivery()
+ {
+     System.out.println("ENTER YOUR NAME FOR SHIPPING😜:");
+     String str=sc1.next();
+     System.out.println("ENTER YOUR PIN CODE FOR SHIPPING😜:");
+     int n=sc1.nextInt();
+     System.out.println("ENTER YOUR SIZE:🤞🤞🤞🤞🤞🤞")
+     ;
+     int a=sc1.nextInt();
+     System.out.println("ENTER WHAT TYPE OF CLOTHES DO YOU WANT:\n 1.WESTERN WEAR \n 2.FANCY WEAR \n 3.TRADITIONAL WEAR \n4.OTHERS ");
+     int b=sc1.nextInt();
+     System.out.println("ENTER YOUR GENDER:\n1.MALE \n2.FEMALE \n 3.OTHERS");
+     int c=sc1.nextInt();
+     System.out.println("ENTER YOUR ADDRESS FOR SHIPPING😜:");
+     String str1=sc1.nextLine();
+     System.out.println("WE WILL CALL YOU WHEN WE REACH YOUR ADDRESS.....!!");
+     System.out.println("👍😉✌️YOUR DELIVERY SUCCESSFULLY ORDERED...THANKS FOR VISITING");
+    System.out.println("                                    \n"); }
+ 
+}
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
