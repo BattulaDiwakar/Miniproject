@@ -1,0 +1,215 @@
+import java.util.Scanner;
+
+public class Project3 
+{
+          static int totalCost;
+          public static void main(String args[])
+          {
+              Scanner input=new Scanner(System.in);
+             
+              int choice;
+              System.out.println("enter number of users:");
+              int n=input.nextInt();
+              Admin A[]=new Admin[n];
+              for(int i=0;i<A.length;i++)
+              {
+               A[i]=new Admin();   
+              
+              A[i].Greetings();
+                  
+                  
+              }
+              do
+              {   
+                  System.out.println("*********MENU**********");
+                  System.out.println("1. LOGIN/SIGNUP");
+                  System.out.println("2. SENDER INFO");
+                  System.out.println("3. DESTINATION POINT");
+                  System.out.println("4. BILL");
+                  System.out.println("5.EXIT");
+                  System.out.println("ENTER YOUR CHOICE");
+                  choice=input.nextInt();
+                  switch(choice)
+                  {
+                   
+                  
+                  //**************************[[SERVICE]]**************************
+                  
+                  
+                    case 1:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Adddeliveryperson();
+                 }
+
+                      
+                        break;
+                 case 2:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Profile();
+                 }
+
+                      
+                        break;        
+                case 3:
+                        for(int i=0;i<A.length;i++)
+                 {
+                     A[i].Delivery();
+                 }
+
+                      
+                        break;  
+                 case 4:
+                        for(int i=0;i<A.length;i++)
+                  {
+                      A[i].Receipt();
+                  }
+
+                      
+                       break; 
+                 case 5:
+                    
+                 System.out.println("THANK YOU FOR CHOOSING OUR PLATFORM💐💐💐 \n ONE MORE STEP TO MOVE ON......"); 
+                 
+                        
+                  }
+                 
+              }while(choice!=6);
+              
+          }
+}
+    class Admin
+    {
+       
+private String a;
+private String c;
+private String str;
+private String str1;
+private String str2;
+private Long d;
+private int z;
+private double total;
+private long balance;
+Scanner sc1=new Scanner(System.in);
+//method to open an account
+void Greetings()
+{    System.out.println("WELCOME🎉🎉🎊TO  D&G SERVICE");    
+System.out.println("Service Guarantee:\n🚛In the event A & B Courier fails to complete delivery or attempt delivery,\n🚛within the time commitment,\n🚛A & B Courier,\n🚛 at its option, \n will reduce the charges to the next appropriate service level either by credit or refund for each such shipment,\n 🚛to the payer only,\n upon request, \n 🚛subject to the following conditions:");
+}
+void Adddeliveryperson()
+{
+    System.out.println("USER NAME:");
+     a=sc1.next();
+    System.out.println("PASSWORD:");
+    String b=sc1.next();
+    System.out.println("EMAIL ID:");
+     c=sc1.next();
+    System.out.println("SELECT GENDER:");
+    System.out.println(" 1.MALE \n 2.FEMALE \n 3.OTHERS");
+    int s=sc1.nextInt();
+    System.out.println("LOCATION:");
+     str=sc1.next();
+    System.out.println("MOBILE NUMBER:");
+    d=sc1.nextLong();
+    System.out.println("ENTER YOUR COURIER COST");
+    balance=sc1.nextInt();
+    
+   
+}
+//method to display account details
+void Profile()
+{  System.out.println("                                                                                                ");
+    System.out.println("💕❤️<**********HI!*******"+a+"************>::💕❤️::");
+System.out.println("------------------------------------------------");
+// System.out.println("============================================");
+  System.out.println("YOU ARE:             🤩       "+a);
+System.out.println("============================================");
+  System.out.println("YOUR NUMBER                    "+d);
+System.out.println("============================================");
+System.out.println("YOUR EMAIL ID                    "+c);
+System.out.println("============================================");
+
+                      
+                        
+                        
+
+}
+ void Delivery()
+ {   
+     System.out.println("ENTER SENDERS NAME😜:");
+      str2=sc1.next();
+     System.out.println("ENTER  PIN CODE FOR DELIVERY😜:");
+     int n=sc1.nextInt();
+     System.out.println(":ENTER YOUR PASSCODE🤞🤞🤞🤞🤞🤞");
+       z=sc1.nextInt() ;
+     System.out.println("ENTER YOUR ADDRESS FOR DELIVERY😜:");
+      str1=sc1.nextLine();
+     System.out.println("WE WILL CALL YOU WHEN WE REACH YOUR ADDRESS.....!!");
+     System.out.println("👍😉✌️YOUR DELIVERY SUCCESSFULLY  PLACED");
+     System.out.println("                                    \n"); 
+     System.out.println("SELECT YOUR PAYMENT METHOD:"); 
+                       int ch=sc1.nextInt();
+     switch(ch)
+                      {
+                          case 1: System.out.println("✌️ UPI");
+                                if(balance>1000)
+                                {
+                                 double tax=balance*(0.9);
+                                 total=balance+tax;
+                                }else
+                                total=balance+40;
+                               
+                                  
+                                  break;
+                         case 2:System.out.println("👌CREDIT / DEBIT /ATM CARD"); 
+                                if(balance>1000){
+                                 double tax=balance*(0.3);
+                                 total=balance+tax;
+                                }else
+                                total=balance+40;
+                                  break;
+                        case 3:System.out.println(" 🤩NET BANKING");
+                               if(balance>1000){
+                                 double tax=balance*(0.4);
+                                 total=balance+tax;
+                                }else
+                                total=balance+40;
+                                  break;
+                      case 4:System.out.println("CASH ON DELIVERY"); 
+                              if(balance>1000){
+                                 double tax=balance*(0.1);
+                                 total=balance+tax;
+                                }else
+                                total=balance+40;
+                                  break;
+                      }
+ 
+}
+
+
+void Receipt()
+{ 
+    System.out.println("********🥰😉👍😍🤩DELIVERY RECIEPT**😍🤩😉👍✌️😊******");         
+    System.out.printf("RECIEPT=%d",z);
+     System.out.println("********🥰😉CUSTOMER INFO::*😍🤩😉*****");      
+     System.out.println("NAME::"+a);
+     System.out.println("EMAIL: :"+c);
+     System.out.println("PHONE NUMBER::"+d);
+     System.out.println("DELIVERY DATE:29/11/2022");
+     System.out.println("DELIVERY ADDRESS"+str1);
+     System.out.println("                                          ");
+     System.out.println("********🥰😉CUSTOMER INFO::*😍🤩😉*****");   
+     System.out.println("RECIEVED BY:"+str2);
+     System.out.println("SUBTOTAL:"+total);
+    
+     
+     
+}  
+    }
+         
+         
+         
+         
+         
+  
